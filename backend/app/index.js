@@ -1,6 +1,9 @@
 'use strict'
 
 const routes = require('./routes')
+const config = require('../config')
+const client = require('kubernetes-client').Client
+const clientConfig = require('kubernetes-client').config
 const bigbang = require('@italojs/bigbang-rest')
 const KubernetesSvcService = require('./services/kubernetes-svc')
 
@@ -10,8 +13,9 @@ const KubernetesSvcService = require('./services/kubernetes-svc')
  * @param  {Object} options.config      Application configs.
  */
 module.exports = bigbang((api, config) => {
+  const ksClient = new Client({ config: clientConfig.getInCluster() })
 
-  const kubernetesSvcService = new KubernetesSvcService()
+  const kubernetesSvcService = new KubernetesSvcService(ksClient)
 
   api.post('/', routes.kubernetes.create.factory(kubernetesSvcService))
   api.get('/:label', routes.kubernetes.findAll.factory(kubernetesSvcService))
