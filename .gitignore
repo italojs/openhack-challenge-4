@@ -1,0 +1,12 @@
+.nyc_output/
+.pnpm-store/
+coverage/
+dist/
+node_modules/
+*.log
+.DS_Store
+.envrc
+.env
+npm-debug.log*
+/projects/intcad/backend/microservices/storage/keyfile.json
+lib/

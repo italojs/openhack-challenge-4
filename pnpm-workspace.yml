@@ -1,0 +1,4 @@
+packages:
+  - 'backend/api'
+  - 'backend/microservices/*'
+  - 'backend/services/*'
