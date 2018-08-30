@@ -17,9 +17,9 @@
     "test": "mocha test --async-only --check-leaks --full-trace --recursive --throw-deprecation"
   },
   "dependencies": {
-    "@italojs/bigbang-rest": "^0.1.1",
+    "@italojs/bigbang-rest": "^0.2.2",
     "express-rescue": "^1.0.11",
-    "kubernetes-client": "^6.0.0",
+    "kubernetes-client": "^5.4.0",
     "lodash": "^4.17.5",
     "lodash.merge": "^4.6.1",
     "sugar-env": "^1.4.0"

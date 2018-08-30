@@ -3,7 +3,7 @@
 module.exports = {
   kubernetes: {
     create: require('./kubernetes-svc/create'),
-    findAll: require('./kubernetes-svc/findAll'),
+    find: require('./kubernetes-svc/find'),
     delete: require('./kubernetes-svc/delete')
   }
 }

@@ -1,7 +1,6 @@
 'use strict'
 
 const rescue = require('express-rescue')
-const { HttpError } = require('@italojs/bigbang-rest')
 
 const factory = (service) => ([
 
@@ -10,7 +9,7 @@ const factory = (service) => ([
    * ===============
    */
   rescue(async (req, res) => {
-    const result = await service.findByLabel(req.params.label)
+    const result = await service.find()
 
     res.status(200)
        .json(result)

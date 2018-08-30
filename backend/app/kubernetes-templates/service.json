@@ -1,0 +1,30 @@
+{
+    "kind": "Service",
+    "apiVersion": "v1",
+    "metadata": {
+        "name": "",
+        "creationTimestamp": null,
+        "labels": {
+            "app": ""
+        }
+    },
+    "spec": {
+        "ports": [
+            {
+                "name": "myport",
+                "protocol": "TCP",
+                "port": 25565,
+                "targetPort": 25565
+            }
+        ],
+        "selector": {
+            "app": ""
+        },
+        "type": "LoadBalancer",
+        "sessionAffinity": "None",
+        "externalTrafficPolicy": "Cluster"
+    },
+    "status": {
+        "loadBalancer": {}
+    }
+}

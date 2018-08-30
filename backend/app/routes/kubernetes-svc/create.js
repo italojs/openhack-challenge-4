@@ -10,10 +10,10 @@ const factory = (service) => ([
    * ===============
    */
   rescue(async (req, res) => {
-    const result = await service.create(req.body.label)
+    await service.create(req.body)
 
-    res.status(201)
-       .json(result)
+    res.status(200)
+       .end()
   })
 ])
 

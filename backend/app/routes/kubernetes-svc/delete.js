@@ -10,7 +10,7 @@ const factory = (service) => ([
    * ===============
    */
   rescue(async (req, res) => {
-    const result = await service.delete(req.params.label)
+    await service.delete(req.body)
 
     res.status(200)
        .end()
