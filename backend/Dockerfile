@@ -4,9 +4,9 @@ ENV NODE_ENV production
 
 RUN npm i -g pnpm
 
-COPY package.json shrinkwrap.yaml /tmp/app/
+COPY package.json /tmp/app/
 RUN cd /tmp/app \
-    && pnpm install --only prod
+    && npm install --only prod
 
 ################################################################################
 

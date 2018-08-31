@@ -13,7 +13,7 @@ const KubernetesSvcService = require('./services/kubernetes-svc')
  * @param  {Object} options.config      Application configs.
  */
 module.exports = bigbang((api, config) => {
-  const ksClient = new Client({ config: clientConfig.fromKubeconfig(process.env.KUBECONFIG), version: '1.10' });
+  const ksClient = new Client({ config: clientConfig.getInCluster(), version: '1.10' });
 
   const kubernetesSvcService = new KubernetesSvcService(ksClient)
 
